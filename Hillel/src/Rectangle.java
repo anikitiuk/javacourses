@@ -1,8 +1,8 @@
 
 public class Rectangle {
     public static void main(String[] params){
-         double perimeter = 24;
-         double area = 36;
+         double perimeter = 14;
+         double area = 12;
          findoutsides(perimeter, area);
     }
     public static void findoutsides(double perimeter, double area){
@@ -16,7 +16,7 @@ public class Rectangle {
             width = length = (perimeter / 2) / 2;
             System.out.println("Width = " + width);
             System.out.println("Length = " + length);
-        } else if(discriminant>0) {
+        } else {
             width = ((perimeter / 2) + Math.sqrt(discriminant)) / 2;
             length = ((perimeter / 2) - Math.sqrt(discriminant)) / 2;
             System.out.println("Width = " + width);
