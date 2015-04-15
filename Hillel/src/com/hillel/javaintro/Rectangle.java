@@ -1,3 +1,4 @@
+package com.hillel.javaintro;
 
 public class Rectangle {
     public static void main(String[] params) {

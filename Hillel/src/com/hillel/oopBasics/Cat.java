@@ -1,14 +1,17 @@
+package com.hillel.oopBasics;
+
 import java.util.Arrays;
 
 /**
  * Created by A.Nikitiuk on 10.04.2015.
  */
 public class Cat {
-    static final int pawCount =4;
-    String name;
-    int age;
-    String vaccines[] = new String[10];
-    int vaccineCount = 0;
+    static final int pawCount = 4;
+    private String name;
+    private int age;
+    private String vaccines[] = new String[10];
+    private int vaccineCount = 0;
+    private String ownerName;
 
     public Cat() {
 
@@ -20,6 +23,33 @@ public class Cat {
 
     public Cat(String name, int age) {
         this.name = name;
+        this.age = age;
+    }
+
+    //getter'û
+    public String getName() {
+        return name;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    //setter'û
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+
         this.age = age;
     }
 
@@ -40,21 +70,21 @@ public class Cat {
         vaccineCount++;
     }
 
-    public static int pawCount(){
+    public static int pawCount() {
         return pawCount;
     }
 
-    public boolean equals(Object other){
-        if(other instanceof Cat){
+    public boolean equals(Object other) {
+        if (other instanceof Cat) {
             Cat otherCat = (Cat) other;
-            if(this.age != otherCat.age){
+            if (this.age != otherCat.age) {
                 return false;
             }
-            if(!this.name.equals(otherCat.name)){
+            if (!this.name.equals(otherCat.name)) {
                 return false;
             }
             return true;
-        }else{
+        } else {
             return false;
         }
     }

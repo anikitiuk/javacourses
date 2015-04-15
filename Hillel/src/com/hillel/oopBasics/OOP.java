@@ -1,10 +1,12 @@
+package com.hillel.oopBasics;
+
 /**
  * Created by A.Nikitiuk on 10.04.2015.
  */
 public class OOP {
 
     public static void main(String[] args) {
-        //oopIntro();
+        oopIntro();
         Cat cat1 = new Cat("Tom", 2);
         Cat cat2 = new Cat("Tom", 2);
         System.out.println("They are equal using ==: " + (cat1 == cat2));

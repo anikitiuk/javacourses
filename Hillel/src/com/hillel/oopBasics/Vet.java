@@ -1,3 +1,7 @@
+package com.hillel.oopBasics;
+
+import com.hillel.oopBasics.Cat;
+
 import java.util.Arrays;
 
 /**
