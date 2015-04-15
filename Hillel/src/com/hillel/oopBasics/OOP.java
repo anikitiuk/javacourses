@@ -7,6 +7,7 @@ public class OOP {
 
     public static void main(String[] args) {
         oopIntro();
+        //negativeAge();
         Cat cat1 = new Cat("Tom", 2);
         Cat cat2 = new Cat("Tom", 2);
         System.out.println("They are equal using ==: " + (cat1 == cat2));
@@ -20,12 +21,18 @@ public class OOP {
         System.out.println("default to string: " + cat1);
         Cat cat2 = new Cat("Murzik", 1);
         Vet vet = new Vet();
+        Cat cat3 = null;
         vet.registerCat(cat1);
         vet.registerCat(cat2);
+        vet.registerCat(cat3);
         vet.print();
         vet.makeVaccine();
         vet.print();
-        System.out.println();
     }
 
+    public static void negativeAge(){
+        Cat cat = new Cat();
+        cat.setAge(-1);
+        System.out.println("this mesage never be printed");
+    }
 }

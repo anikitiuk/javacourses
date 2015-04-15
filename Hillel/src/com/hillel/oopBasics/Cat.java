@@ -9,7 +9,7 @@ public class Cat {
     static final int pawCount = 4;
     private String name;
     private int age;
-    private String vaccines[] = new String[10];
+    private Vaccine vaccines[] = new Vaccine[10];
     private int vaccineCount = 0;
     private String ownerName;
 
@@ -49,7 +49,9 @@ public class Cat {
     }
 
     public void setAge(int age) {
-
+        if(age < 0){
+            throw new RuntimeException("Incorrect age value: " + age);
+        }
         this.age = age;
     }
 
@@ -65,7 +67,7 @@ public class Cat {
         return result;
     }
 
-    public void acceptVaccine(String vaccine) {
+    public void acceptVaccine(Vaccine vaccine) {
         vaccines[vaccineCount] = vaccine;
         vaccineCount++;
     }

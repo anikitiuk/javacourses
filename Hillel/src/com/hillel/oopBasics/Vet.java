@@ -12,8 +12,10 @@ public class Vet {
     int registered = 0;
 
     public void registerCat(Cat cat) {
-        vetList[registered] = cat;
-        registered++;
+        if (cat != null) {
+            vetList[registered] = cat;
+            registered++;
+        }
     }
 
     public void print() {
@@ -23,7 +25,7 @@ public class Vet {
     public void makeVaccine() {
         for (int i = 0; i < registered; i++) {
             Cat cat = vetList[i];
-            cat.acceptVaccine("SVG");
+            cat.acceptVaccine(Vaccine.BCG);
         }
     }
 }
