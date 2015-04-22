@@ -1,4 +1,4 @@
-package com.hillel.oopBasics;
+package com.hillel.dataStructures.ArrayList;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-import com.hillel.oopBasics.StringArray;
+import com.hillel.dataStructures.ArrayList.StringArray;
 import org.junit.Test;
 
 /**

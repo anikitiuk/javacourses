@@ -1,4 +1,4 @@
-package com.hillel.oopBasics;
+package com.hillel.dataStructures.linkedList;
 
 /**
  * Created by A.Nikitiuk on 17.04.2015.

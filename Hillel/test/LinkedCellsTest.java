@@ -1,4 +1,4 @@
-import com.hillel.oopBasics.LinkedCells;
+import com.hillel.dataStructures.linkedList.LinkedCells;
 
 /**
  * Created by A.Nikitiuk on 17.04.2015.
@@ -10,7 +10,7 @@ public class LinkedCellsTest {
 
         list.add("A");
         System.out.println("One element list: " + list);
-        
+
         list.add("B");
         System.out.println("Two element list: " + list);
     }
