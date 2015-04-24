@@ -1,9 +1,10 @@
 package com.hillel.dataStructures.ArrayList;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 
-public class ImprovedArray {
+public class ImprovedArray implements Iterable {
 
     private static final int RESIZE_MULTIPLIER = 2;
 
@@ -65,5 +66,10 @@ public class ImprovedArray {
         }
         result += "]";
         return result;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new ArrayIterator(this);
     }
 }

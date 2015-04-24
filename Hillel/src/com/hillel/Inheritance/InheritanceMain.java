@@ -8,6 +8,11 @@ import java.util.ArrayList;
 public class InheritanceMain {
     public static void main(String[] args) {
 
+
+
+    }
+
+    public static void interfaceExample() {
         Circle circle = new Circle(10);
 
         Rectangle rectangle = new Rectangle(10,5);
@@ -17,7 +22,26 @@ public class InheritanceMain {
         ArrayList<Colored> list = new ArrayList<Colored>();
         list.add(circle);
         list.add(rectangle);
+    }
 
+    private static void polymorphismVsFieldsAndStaticMethods() {
+        Person purePerson = new Person("Ivan");
+        /*System.out.println("Person object as Person:\n" +
+                "   method: {" + purePerson.someMethod() + "} \n" +
+                "   out of class field: {" + purePerson.field + "} \n" +
+                "   out of class static method: {" + purePerson.staticMethod() + "} \n");
+
+        Employee pureEmployee = new Employee("Ivan", "T");
+        System.out.println("Employee object as Employee:\n" +
+                "   method: {" + pureEmployee.someMethod() + "} \n" +
+                "   out of class field: {" + pureEmployee.field + "} \n" +
+                "   out of class static method: {" + pureEmployee.staticMethod() + "}\n");
+
+        Person employeeCastedToPerson = pureEmployee;
+        System.out.println("Employee object casted to Person:\n" +
+                "   polymorphyc method: {" + employeeCastedToPerson.someMethod() + "} \n" +
+                "   out of class field: {" + employeeCastedToPerson.field + "} \n" +
+                "   out of class static method: {" + employeeCastedToPerson.staticMethod() + "}\n");*/
     }
 
     public static void polymorphism() {

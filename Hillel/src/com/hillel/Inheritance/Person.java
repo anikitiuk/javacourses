@@ -7,6 +7,8 @@ public class Person extends Object{
 
     private String name;
 
+    public String field = "Person's field";
+
     public Person(String name){
         this.name = name;
     }
