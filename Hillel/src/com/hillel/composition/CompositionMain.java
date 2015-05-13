@@ -5,10 +5,10 @@ package com.hillel.composition;
  */
 public class CompositionMain {
     public static void main(String[] args) {
-        Employee employee = new Employee();
+       /* Employee employee = new Employee();
         employee.department = "IT";
         employee.getName();
 
-        Namable p = employee;
+        Namable p = employee;*/
     }
 }
