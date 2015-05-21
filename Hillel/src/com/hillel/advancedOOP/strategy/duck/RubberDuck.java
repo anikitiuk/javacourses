@@ -1,9 +1,7 @@
-package com.hillel.advancedOOP.duck;
+package com.hillel.advancedOOP.strategy.duck;
 
-import com.hillel.advancedOOP.fly.FlyBehavior;
-import com.hillel.advancedOOP.fly.FlyNoWay;
-import com.hillel.advancedOOP.quack.QuackBehavior;
-import com.hillel.advancedOOP.quack.Silence;
+import com.hillel.advancedOOP.strategy.fly.FlyNoWay;
+import com.hillel.advancedOOP.strategy.quack.Silence;
 
 /**
  * Created by A.Nikitiuk on 24.04.2015.

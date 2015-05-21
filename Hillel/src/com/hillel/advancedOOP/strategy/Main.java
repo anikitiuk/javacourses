@@ -1,7 +1,8 @@
-package com.hillel.advancedOOP;
+package com.hillel.advancedOOP.strategy;
 
-import com.hillel.advancedOOP.duck.*;
-import com.hillel.advancedOOP.fly.Rocket;
+
+import com.hillel.advancedOOP.strategy.fly.Rocket;
+import com.hillel.advancedOOP.strategy.duck.*;
 
 /**
  * Created by A.Nikitiuk on 24.04.2015.

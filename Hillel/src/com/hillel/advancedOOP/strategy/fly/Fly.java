@@ -1,4 +1,4 @@
-package com.hillel.advancedOOP.fly;
+package com.hillel.advancedOOP.strategy.fly;
 
 /**
  * Created by A.Nikitiuk on 24.04.2015.

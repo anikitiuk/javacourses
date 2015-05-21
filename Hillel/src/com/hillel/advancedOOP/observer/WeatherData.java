@@ -15,6 +15,8 @@ public class WeatherData {
         updatables.add(observer);
     }
 
+    public void removeObserver(Updatable observer) {updatables.remove(observer);}
+
     public void recieveData(int temperature, int humidity){
         weather = new Weather(temperature,humidity);
 
