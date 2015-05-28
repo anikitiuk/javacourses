@@ -7,7 +7,7 @@ import java.util.List;
  * Created by ANikitiuk on 25.05.2015.
  */
 public class JavaGroupMain {
-    public static void main(String[] args) throws UnknownStudentException {
+    public static void main(String[] args)  {
         List<String> list = new ArrayList<>();
         list.add("Ivan");
         list.add("Dimon");
@@ -15,22 +15,30 @@ public class JavaGroupMain {
 
         JavaGroup group = new JavaGroup(list);
 
-        try {
-            group.addGrade("Ivan", 5);
-        } catch (UnknownStudentException e) {
-            System.out.println(e);
-            throw e;
-        }
-        try {
-            group.addGrade("Nikolay", 2);
-        }catch (UnknownStudentException e){
-            e.printStackTrace(System.out);
-        }
+
+        addGrade("Ivan",5, group);
+        addGrade("Dimon", 5, group);
+        addGrade("Nikita", 5, group);
+        addGrade("Ivan", 2, group);
+
+        addGrade(null, 2, group);
         try {
             group.addGrade("Dimon", 5);
-        } catch (UnknownStudentException e) {
-            e.printStackTrace();
+        }catch (UnknownStudentException e){
+
         }
 
+        System.out.println("end");
+
+    }
+
+    private static void addGrade(String name, Integer grade, JavaGroup group) {
+        try {
+            group.addGrade(name, grade);
+        } catch (UnknownStudentException | GradeAlreadyExistException e) {
+            e.printStackTrace(System.out);
+        }catch (RuntimeException e){
+            e.printStackTrace(System.out);
+        }
     }
 }

@@ -20,6 +20,13 @@ public class JavaGroup {
         if(!namesToGrades.containsKey(name)){
             throw new UnknownStudentException("Unknown student " + name);
         }
+        Integer existedGrade = namesToGrades.get(name);
+        if(existedGrade != null){
+            throw new GradeAlreadyExistException("name: " + name + ", existed grade: " + existedGrade +", new grade: " + grade);
+        }
+        if(name == null){
+            throw new NullPointerException("name is null");
+        }
         namesToGrades.put(name,grade);
     }
 }
