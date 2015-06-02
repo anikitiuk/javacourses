@@ -1,3 +1,4 @@
+package com.hillel.oopBasics;
 /**
  * Created by A.Nikitiuk on 10.04.2015.
  */
