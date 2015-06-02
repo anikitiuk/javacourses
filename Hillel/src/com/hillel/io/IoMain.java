@@ -22,6 +22,7 @@ public class IoMain {
         ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("hillel/data.txt"));
         array = (long[]) inputStream.readObject();
         System.out.println(Arrays.toString(array));
+        inputStream.close();
 
     }
 
