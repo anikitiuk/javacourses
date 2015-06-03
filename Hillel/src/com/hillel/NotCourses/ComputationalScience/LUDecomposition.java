@@ -1,7 +1,6 @@
-package com.hillel.notCourses.computationalScience;
+package com.hillel.NotCourses.ComputationalScience;
 
 import java.io.*;
-import java.util.Arrays;
 
 /**
  * Created by Lesha on 002 02.06.15.
@@ -23,7 +22,7 @@ public class LUDecomposition {
         double[][] U = new double[n][n];
         double[][] X = new double[n][n];
 
-        System.out.println("Matrix A:" + "\n");
+        System.out.println("\n"+"Matrix A:");
         matrixDisplay(A, n);
 
         LUDecompositionMethod(A, U, L, n);
