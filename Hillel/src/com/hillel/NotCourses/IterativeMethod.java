@@ -32,7 +32,7 @@ public class IterativeMethod {
         double tempJ;
         int c=0;
         double[] tempX = new double[n];
-        double norm; // норма, определяемая как наибольшая разность компонент столбца иксов соседних итераций.
+        double norm;
         do {
             c++;
             for (int i = 0; i < n; i++) {
