@@ -8,35 +8,35 @@ import java.io.*;
 public class LUDecomposition {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("hillel/data.txt"));
-        double[][] A = {{3, -1}, {4, 0}};
-        outputStream.writeObject(A);
+        double[][] a = {{3, -1}, {4, 0}};
+        outputStream.writeObject(a);
         outputStream.close();
 
         ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("hillel/data.txt"));
-        A = (double[][]) inputStream.readObject();
+        a = (double[][]) inputStream.readObject();
         inputStream.close();
 
-        int n = A.length;
+        int n = a.length;
         double detA = 1;
-        double[][] L = new double[n][n];
-        double[][] U = new double[n][n];
-        double[][] X = new double[n][n];
+        double[][] l = new double[n][n];
+        double[][] u = new double[n][n];
+        double[][] x = new double[n][n];
 
         System.out.println("\n"+"Matrix A:");
-        matrixDisplay(A, n);
+        matrixDisplay(a);
 
-        LUDecompositionMethod(A, U, L, n);
+        luDecompose(a, u, l);
 
-        reversedMatrix(n, L, U, X);
+        reversedMatrix(n, l, u, x);
 
-        detA = determinantA(n, detA, U);
+        detA = determinantA(n, detA, u);
 
         System.out.println("\n\n" + "Matrix U:");
-        matrixDisplay(U, n);
+        matrixDisplay(u);
         System.out.println("\n\n" + "Matrix L:");
-        matrixDisplay(L, n);
+        matrixDisplay(l);
         System.out.println("\n\n" + "Matrix X:");
-        matrixDisplay(X, n);
+        matrixDisplay(x);
         System.out.println("\n\n" + "Determinant of A: " + detA);
     }
 
@@ -79,43 +79,43 @@ public class LUDecomposition {
         }
     }
 
-    private static void LUDecompositionMethod(double[][] a, double[][] U, double[][] L, int n) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
+    private static void luDecompose(double[][] a, double[][] u, double[][] l) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
 
-                U[0][i] = a[0][i];
-                L[i][0] = a[i][0] / U[0][0];
+                u[0][i] = a[0][i];
+                l[i][0] = a[i][0] / u[0][0];
                 double sum = 0;
                 for (int k = 0; k < i; k++) {
-                    sum += L[i][k] * U[k][j];
+                    sum += l[i][k] * u[k][j];
                 }
 
                 if (i > j) {
-                    U[i][j] = 0;
+                    u[i][j] = 0;
                 } else {
-                    U[i][j] = a[i][j] - sum;
+                    u[i][j] = a[i][j] - sum;
                 }
 
                 if (i > j) {
-                    L[j][i] = 0;
+                    l[j][i] = 0;
                 } else if (i == j) {
-                    L[i][j] = 1;
+                    l[i][j] = 1;
                 } else {
                     sum = 0;
                     for (int k = 0; k < i; k++) {
-                        sum += L[j][k] * U[k][i];
+                        sum += l[j][k] * u[k][i];
                     }
-                    L[j][i] = (a[j][i] - sum) / U[i][i];
+                    l[j][i] = (a[j][i] - sum) / u[i][i];
                 }
             }
         }
     }
 
-    private static void matrixDisplay(double[][] array, int length) throws IOException, ClassNotFoundException {
+    private static void matrixDisplay(double[][] array) throws IOException, ClassNotFoundException {
         int k = 0;
 
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
                 if (k != i) {
                     System.out.println("\t");
                 }
