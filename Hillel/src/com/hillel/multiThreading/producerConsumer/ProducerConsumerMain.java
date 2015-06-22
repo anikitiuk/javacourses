@@ -20,6 +20,10 @@ public class ProducerConsumerMain {
         producer.interrupt();
         consumer.interrupt();
 
+        synchronized (bucket){
+            bucket.notifyAll();
+        }
+
         try {
             producer.join();
         } catch (InterruptedException e) {}
