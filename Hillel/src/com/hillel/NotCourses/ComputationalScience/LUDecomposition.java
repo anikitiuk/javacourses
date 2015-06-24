@@ -17,7 +17,8 @@ public class LUDecomposition {
         inputStream.close();
 
         int n = a.length;
-        double detA = 1;
+        double detA =1;
+
         double[][] l = new double[n][n];
         double[][] u = new double[n][n];
         double[][] x = new double[n][n];

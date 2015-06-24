@@ -16,7 +16,7 @@ public class IterativeMethod {
                 {0.17, -0.21, 0.31, 0}
         };
         int N = B.length;
-        matrixDisplay(B, N);
+        matrixDisplay(B);
         double[] F = {2.7, -1.5, 1.2, -0.17};
         double[] X = {0, 0, 0, 0};
         System.out.println("\n\n" + Arrays.toString(X));
@@ -78,11 +78,11 @@ public class IterativeMethod {
         System.out.println("\nSteps' Quantity: " + c);
     }
 
-    private static void matrixDisplay(double[][] array, int length) throws IOException, ClassNotFoundException {
+    private static void matrixDisplay(double[][] array) throws IOException, ClassNotFoundException {
         int k = 0;
 
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
                 if (k != i) {
                     System.out.println("\t");
                 }
