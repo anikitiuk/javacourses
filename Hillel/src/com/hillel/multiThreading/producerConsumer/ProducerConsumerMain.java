@@ -26,10 +26,12 @@ public class ProducerConsumerMain {
 
         try {
             producer.join();
+            System.out.println("producer joined");
         } catch (InterruptedException e) {}
 
         try {
             consumer.join();
+            System.out.println("consumer joined");
         } catch (InterruptedException e) {}
 
         System.out.println(bucket);

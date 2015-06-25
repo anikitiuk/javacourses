@@ -10,12 +10,10 @@ public class Bucket {
     public void put(){
         synchronized (this) {
             while (count == maxCount) {
-                if(Thread.currentThread().isInterrupted()){
-                    return;
-                }
                 try {
                     wait();
                 } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                     return;
                 }
             }
@@ -27,12 +25,10 @@ public class Bucket {
 
     public synchronized void get(){
         while (count == 0){
-            if(Thread.currentThread().isInterrupted()){
-                return;
-            }
             try {
                 wait();
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
                 return;
             }
         }
