@@ -5,6 +5,7 @@ import com.hillel.Inheritance.Manager;
 import com.hillel.Inheritance.Person;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -35,10 +36,22 @@ public class GenericsMain {
 
         addEmployee(employees);
         addEmployee(persons);
+        //addEmployee(managers);
+
+        managers  = Collections.<Manager>emptyList();
+
+        employees = Collections.singletonList(manager);
+
+        List<Employee> copyEmployee = GenericsMain.<Employee>copyCollection(employees);
+    }
+
+    public static  <T> List<T> copyCollection(List<T> source){
+
+        return new ArrayList<>(source);
     }
 
     public static void addEmployee(List<? super Employee> employees){
-        employees.add(new Employee("Ivan", "Stuff"));
+        employees.add(new Employee("Ivan", "Staff"));
     }
 
     public static void printDepartment(Employee employee) {
