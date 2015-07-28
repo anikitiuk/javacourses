@@ -1,4 +1,4 @@
-package com.hillel.NotCourses.ComputationalScience;
+package com.hillel.NotCourses;
 
 import java.io.*;
 
